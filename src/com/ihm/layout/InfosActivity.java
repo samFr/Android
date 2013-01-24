@@ -51,7 +51,7 @@ public class InfosActivity extends Activity {
 		
 		@Override
 		public void onClick(View arg0) {
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 			InfosActivity.this.finish();
 		}
 	};

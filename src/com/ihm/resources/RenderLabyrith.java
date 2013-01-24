@@ -43,11 +43,13 @@ public class RenderLabyrith extends View {
               	canvas.drawRect(rect, paintParoit);
   			 }
  			*/
-             
-             Ressources.HitboxPlayer = new RectF(Ressources.posXPlayer, Ressources.posYPlayer, Ressources.posXPlayer+Ressources.tailleBille, Ressources.posYPlayer+Ressources.tailleBille);
-             //canvas.drawRect(Ressources.HitboxPlayer, paintParoit);
+             if(Ressources.mouveBille){
+            	 Ressources.HitboxPlayer = new RectF(Ressources.posXPlayer, Ressources.posYPlayer, Ressources.posXPlayer+Ressources.tailleBille, Ressources.posYPlayer+Ressources.tailleBille);
+             }
+             //canvas.drawRect(Ressources.distination, paintParoit);
 
-             canvas.drawBitmap(Ressources.bille, new Rect(0,0,128,128), Ressources.HitboxPlayer, paintParoit);
+             
+            	canvas.drawBitmap(Ressources.bille, new Rect(0,0,128,128), Ressources.HitboxPlayer, paintParoit);
              
              /*
              canvas.drawRect(0,0,Ressources.widthScreen, Ressources.heigthScreen, paint);

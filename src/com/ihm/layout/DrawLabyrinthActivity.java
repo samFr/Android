@@ -77,6 +77,7 @@ public class DrawLabyrinthActivity extends Activity {
 		sensorManager.registerListener(ecouteurGravity, sensorManager.getDefaultSensor(sensor.TYPE_GRAVITY), sensorManager.SENSOR_DELAY_GAME);
 		
 		//rafrichir le rendrelabyrinth
+		Ressources.mouveBille = true;
 		Ressources.startPlay = true;
 		Ressources.renderLabyrith.postInvalidate();
 		

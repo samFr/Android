@@ -38,6 +38,8 @@ public class EcouteurGravity implements SensorEventListener {
 		//Log.d("Sam1", "je suis dans ecouteur gravity");
 		
 		//this.MouvementBill(arg0.values[0], arg0.values[1]);
+		//detection si la balle a atteind la distination
+		this.CollisionDistination(arg0.values[0], arg0.values[1]);
 		
 		//detection des collision sur  les mure
 		this.CollisionMure(arg0.values[0], arg0.values[1]);
@@ -51,6 +53,21 @@ public class EcouteurGravity implements SensorEventListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	//collision trou distination----------------------------------------
+	public void CollisionDistination(float x0, float y0){
+		float x, y;
+		RectF rect;
+		x = Ressources.posXPlayer - x0;
+		y = Ressources.posYPlayer + y0;
+		rect = new RectF(x, y, x+Ressources.tailleBille, y+Ressources.tailleBille);
+		if(Ressources.CollisionDistination(rect)){
+			if(Ressources.VibrationOk && Ressources.mouveBille)
+				Ressources.vibrator.vibrate(Ressources.longVibratorWin);
+			Ressources.mouveBille = false;
+		}
+	}
+	//------------------------------------------------------------------
 	
 	//detction collision sur les cercle
 	public void MouvementBill(float x, float y){
@@ -118,28 +135,29 @@ public class EcouteurGravity implements SensorEventListener {
 	//-------------------------------------------------------------------------------
 	
 	//collision sur les trous---------------------------------------------------------
-		public void CollisionTrous(float x0, float y0){
-			float x, y;
-			RectF rect;
-			
-			//collision sur les mure
-			//collision sur l'axe x-------------------------------------------------------
-			x = Ressources.posXPlayer - x0;
-			y = Ressources.posYPlayer + y0;
-			rect = new RectF(x, y, x+Ressources.tailleBille, y+Ressources.tailleBille);
-			
-			if(Ressources.CollisionHoles(rect))
-			{
-				Ressources.posXPlayer = x;
-			}else{
-				Ressources.ReJouer();
-				Ressources.vibrator.vibrate(Ressources.lognVibrator);
-			}
-			//----------------------------------------------------------------------------
-			
-			//rafrechire
-			Ressources.renderLabyrith.postInvalidate();
+	public void CollisionTrous(float x0, float y0){
+		float x, y;
+		RectF rect;
+		
+		//collision sur les mure
+		//collision sur l'axe x-------------------------------------------------------
+		x = Ressources.posXPlayer - x0;
+		y = Ressources.posYPlayer + y0;
+		rect = new RectF(x, y, x+Ressources.tailleBille, y+Ressources.tailleBille);
+		
+		if(Ressources.CollisionHoles(rect))
+		{
+			Ressources.posXPlayer = x;
+		}else{
+			Ressources.ReJouer();
+			if(Ressources.VibrationOk)
+				Ressources.vibrator.vibrate(Ressources.longVibrator);
 		}
-		//-------------------------------------------------------------------------------
+		//----------------------------------------------------------------------------
+		
+		//rafrechire
+		Ressources.renderLabyrith.postInvalidate();
+	}
+	//-------------------------------------------------------------------------------
 
 }

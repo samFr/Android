@@ -33,14 +33,14 @@ public final class Ressources {
 	public static float posinitX,  posinitY;
 	
 	//information de player
-	public static RectF HitboxPlayer;
-	
 	public static float posXPlayer, posYPlayer;
-	
+	public static RectF HitboxPlayer;
 	public static Bitmap bille;
-	public static Bitmap bitmapMap;
-	
 	public static float tailleBille;
+	public static boolean mouveBille = false;
+	
+	public static Bitmap bitmapMap;
+
 	
 	//controleur de jeux
 	public static boolean startPlay;
@@ -50,7 +50,8 @@ public final class Ressources {
 	
 	//vibration
 	public static Vibrator vibrator = null;
-	public static int lognVibrator = 35;
+	public static int longVibrator = 35;
+	public static int longVibratorWin = 60;
 	
 	//parametrage de l'application--------------------------------------
 	public static boolean VibrationOk = false;
@@ -72,7 +73,7 @@ public final class Ressources {
 		HitboxPlayer = new RectF(posXPlayer, posYPlayer, posXPlayer+tailleBille, posYPlayer+tailleBille);
 		
 		startPlay = false;
-		bille = BitmapFactory.decodeResource(context.getResources(),R.drawable.bille_noire, new BitmapFactory.Options());
+		bille = BitmapFactory.decodeResource(context.getResources(),R.drawable.bille, new BitmapFactory.Options());
 	}
 	
 
@@ -143,6 +144,18 @@ public final class Ressources {
 			}
 		}
 		return true;
+	}
+	//--------------------------------------------------------------------------------------------------------------
+	
+	
+	//collision distination-----------------------------------------------------------------------------------------
+	public static boolean CollisionDistination(RectF bille){
+		if(RectF.intersects(bille,Ressources.distination))
+		{
+			Ressources.HitboxPlayer = Ressources.distination;
+			return true;
+		}else
+			return false;
 	}
 	//--------------------------------------------------------------------------------------------------------------
 	

@@ -19,12 +19,13 @@ public final class R {
     public static final class drawable {
         public static final int arriere_plan_page_parametre=0x7f020000;
         public static final int arriere_plan_page_principal=0x7f020001;
-        public static final int bille_noire=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int map_level1=0x7f020004;
-        public static final int map_level2=0x7f020005;
-        public static final int masp_android=0x7f020006;
-        public static final int texture_andriod=0x7f020007;
+        public static final int bille=0x7f020002;
+        public static final int bille_noire=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int map_level1=0x7f020005;
+        public static final int map_level2=0x7f020006;
+        public static final int masp_android=0x7f020007;
+        public static final int texture_andriod=0x7f020008;
     }
     public static final class id {
         public static final int LayoutMain=0x7f080003;

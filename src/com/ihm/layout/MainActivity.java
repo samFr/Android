@@ -36,6 +36,12 @@ public class MainActivity extends Activity {
 		Ressources.Inisialized(this);
 	}
 	
+	@Override
+	public void onDestroy() {
+        super.onDestroy();
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+	
 	//chargement des infos
 	public void LoadInfos(){
 		//chargement taille de l'ecrant
@@ -71,7 +77,7 @@ public class MainActivity extends Activity {
 			startActivity(intent);
 			
 			//singalisation de vibration
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 		}
 	};
 	
@@ -84,7 +90,7 @@ public class MainActivity extends Activity {
 			startActivity(intent);
 			
 			//singalisation de vibration
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 		}
 	};
 	
@@ -97,7 +103,7 @@ public class MainActivity extends Activity {
 			startActivity(intent);
 			
 			//singalisation de vibration
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 		}
 	};
 	
@@ -107,7 +113,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onClick(View arg0) {
 			//singalisation de vibration
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 			
 			//afficher la btoite de dialogue
 			showDialog(BoiteDialogue.ID_FERMER_DIALOG);

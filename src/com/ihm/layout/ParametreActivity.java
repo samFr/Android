@@ -29,7 +29,7 @@ public class ParametreActivity extends Activity {
 	private RadioButton level1 = null,
 						level2  = null,
 						level3  = null;
-
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_parametre);	
@@ -123,7 +123,7 @@ public class ParametreActivity extends Activity {
 			}
 			
 			//singalisation de vibration
-			Ressources.vibrator.vibrate(Ressources.lognVibrator);
+			Ressources.vibrator.vibrate(Ressources.longVibrator);
 			
 			//fermer la fenetre
 			ParametreActivity.this.finish();
@@ -138,7 +138,7 @@ public class ParametreActivity extends Activity {
 		public void onClick(View arg0) {
 			if(vibration.isChecked())
 				//singalisation de vibration
-				Ressources.vibrator.vibrate(Ressources.lognVibrator);
+				Ressources.vibrator.vibrate(Ressources.longVibrator);
 		}
 	};
 	
