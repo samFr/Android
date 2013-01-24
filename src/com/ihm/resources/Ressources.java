@@ -124,6 +124,7 @@ public final class Ressources {
 		for (RectF rect : Walls) {
 			if(RectF.intersects(bille,rect))
 			{
+				CollisionIntern(rect, bille);
 				if(bille.centerY() < rect.centerY()){
 					if( bille.bottom >= rect.top )
 				    {
@@ -160,4 +161,47 @@ public final class Ressources {
 		}
 
 	}
+	
+	//gestion des collision
+    public static boolean Collision1(RectF bille){
+        for (RectF rect : Walls) {
+            if(RectF.intersects(bille,rect))
+            {
+                return CollisionIntern(rect, bille);
+            }
+        }
+        //Log.d("Chris", "true ");
+        return true;
+    }
+   
+    private static boolean CollisionIntern(RectF rectMur, RectF bille){
+        RectF intersect = new RectF(rectMur);
+       
+        if(intersect.intersect(bille)){
+           
+            int[] pixels = new int[(int)(intersect.width()*intersect.height())];
+           
+            Log.d("D", "" + (int)intersect.left + " - "  + (int)intersect.top + " - "  + ((intersect.width())) + " - "  + ((intersect.height())));
+            
+            /*
+            Ressources.bitmapMap.getPixels(pixels, 0, 1, (int)intersect.left, (int)intersect.top, ((int)intersect.width())-1, ((int)intersect.height())-1);
+
+            for (int couleur : pixels) {
+                if(couleur != Color.rgb(243, 187, 90))
+                    return false;
+            }
+            */
+
+           
+            for(int x = (int)intersect.left; x < intersect.right; x++){
+                for(int y = (int)intersect.top; y < (int)intersect.bottom; y++){
+                    if(Ressources.bitmapMap.getPixel(x,y) == Color.rgb(243, 187, 90))
+                        return false;
+                }
+            }
+            
+        }
+       
+        return true;
+    }
 }

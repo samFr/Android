@@ -91,13 +91,15 @@ public class EcouteurGravity implements SensorEventListener {
 		//collision sur les mure
 		//collision sur l'axe x-------------------------------------------------------
 		x = Ressources.posXPlayer - x0;
-		y = Ressources.posYPlayer;
+		y = Ressources.posYPlayer + y0;
 		rectX = new RectF(x, y, x+Ressources.tailleBille, y+Ressources.tailleBille);
 		
-		if(Ressources.CollisionX(rectX))
+		if(Ressources.Collision1(rectX))
 		{
 			Ressources.posXPlayer = x;
+			Ressources.posYPlayer = y;
 		}
+		/*
 		//----------------------------------------------------------------------------
 		//rafrechire
 		Ressources.renderLabyrith.postInvalidate();
@@ -105,13 +107,12 @@ public class EcouteurGravity implements SensorEventListener {
 		x = Ressources.posXPlayer;// - arg0.values[0];
 		y = Ressources.posYPlayer + y0;
 		rectY = new RectF(x, y, x+Ressources.tailleBille, y+Ressources.tailleBille);
-		
-		if(Ressources.CollisionY(rectY))
+		if(Ressources.Collision1(rectY))
 		{
 			Ressources.posYPlayer = y;
 		}
 		//----------------------------------------------------------------------------
-		
+		*/
 		//rafrechire
 		Ressources.renderLabyrith.postInvalidate();
 	}
