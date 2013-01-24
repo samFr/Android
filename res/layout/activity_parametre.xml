@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" 
+    android:background="@drawable/arriere_plan_page_parametre" >
+
+    <!-- les radio button pour difinir la difficulté -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/Margin_Bouton"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/Text_Size"
+            android:text="@string/difficulte"/>
+
+        <RadioGroup
+            android:id="@+id/RadioGroupdifficulte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/difficulte1"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/difficulte1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/difficulte1" />
+
+            <RadioButton
+                android:id="@+id/difficulte2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/difficulte2" />
+
+            <RadioButton
+                android:id="@+id/difficulte3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/difficulte3" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- les element de radio button pour définir le level -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/Margin_Bouton"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/Text_Size"
+            android:text="@string/niveau" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupNiveau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/niveau1"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/niveau1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/niveau3" />
+
+            <RadioButton
+                android:id="@+id/niveau2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/niveau2" />
+
+            <RadioButton
+                android:id="@+id/niveau3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/niveau3" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- le bouton vibras -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/Margin_Bouton"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/vibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vibration" />
+    </LinearLayout>
+    
+   <!-- les bouton valider et annuler -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/Margin_Bouton"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/valider"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/Margin_LeftRight"
+            android:layout_marginRight="@dimen/Margin_LeftRight"
+            android:text="@string/bouton_valider" />
+    </LinearLayout>
+
+</LinearLayout>

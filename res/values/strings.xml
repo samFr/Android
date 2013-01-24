@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Projet Android IHM-2013</string>
+    <string name="activity_parametre">Parametre</string>
+    <string name="activity_draw_labyrinth">Labyrinth</string><string name="activity_infos">A propos</string><string name="menu_settings">Settings</string>
+    <string name="bouton_jouer">Jouer</string>
+    <string name="bouton_fermer">Quitter</string>
+    <string name="bouton_option">Option</string>
+    <string name="bouton_infos">Infos</string>
+    <string name="bouton_valider">Valider</string>
+    <string name="bouton_annuler">Annuler</string>
+    <string name="niveau">Niveau : </string>
+    <string name="niveau1">L 1</string>
+    <string name="niveau2">L 2</string>
+    <string name="niveau3">L3</string>
+    <string name="difficulte">Difficulté : </string>
+    <string name="difficulte1">Facile</string>
+    <string name="difficulte2">Moyen</string>
+    <string name="difficulte3">Difficile</string>
+    <string name="vibration">Vibration</string>
+    
+    
+
+</resources>

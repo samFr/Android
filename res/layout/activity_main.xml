@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LayoutMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/arriere_plan_page_principal" >
+    
+	<LinearLayout 
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginLeft="@dimen/Margin_LeftRight"
+	    android:layout_marginRight="@dimen/Margin_LeftRight"
+	    android:gravity="center"
+	    android:orientation="vertical" >
+	    
+	    <Button
+	        android:id="@+id/jouer"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginBottom="@dimen/Margin_Bouton"
+	        android:text="@string/bouton_jouer" />
+	    
+	    <Button 
+	      android:id="@+id/option"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	      android:layout_gravity="center"
+	      android:layout_marginBottom="@dimen/Margin_Bouton"
+	      android:text="@string/bouton_option"
+	    />
+	
+	    <Button 
+	      android:id="@+id/infos"
+	      android:layout_width="fill_parent"
+	      android:layout_height="wrap_content"
+	      android:layout_gravity="center"
+	      android:layout_marginBottom="@dimen/Margin_Bouton"
+	      android:text="@string/bouton_infos"
+	    />
+	
+	    <Button
+	        android:id="@+id/fermer"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginBottom="@dimen/Margin_Bouton"
+	        android:text="@string/bouton_fermer" />
+	
+	</LinearLayout>
+</RelativeLayout>
